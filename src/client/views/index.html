@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+        <!-- <script type="text/javascript" src="../../../dist/main.js"></script> -->
+    </head>
+
+    <body>
+
+        <header>
+            <div class="Logo">
+                Rawan Alosami
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <input id="txt" type="text" name="input" value="" placeholder="Enter your text here">
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                </form>
+            </section>
+
+                <section>
+                    <strong id="formResultsTitle">Form Results:</strong>
+                    <div class="formResults"><p class="title">Model: <span class="APIResults" id="model"></span></p> </div>
+                    <div class="formResults"><p class="title">Polarity: <span class="APIResults" id="polarity"></span></p> </div>
+                    <div class="formResults"><p class="title">Agreement: <span class="APIResults" id="agreement"></span></p> </div>
+                    <div class="formResults"><p class="title">Subjectivity: <span class="APIResults" id="subjectivity"></span></p> </div>
+                    <div class="formResults"><p class="title">Confidence: <span class="APIResults" id="confidence"></span></p> </div>
+                    <div class="formResults"><p class="title">Irony: <span class="APIResults" id="irony"></span></p> </div>
+                </section>
+        </main>
+
+        <footer>
+            
+        </footer>
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+           </script>
+    </body>
+</html>
